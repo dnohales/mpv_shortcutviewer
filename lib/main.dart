@@ -1,5 +1,9 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
+import 'models/shortcut.dart';
 import 'ui/app.dart';
 
 void main() async {
@@ -19,5 +23,10 @@ void main() async {
     await windowManager.focus();
   });
 
-  runApp(const App());
+  String? input = stdin.readLineSync();
+  List<dynamic> shortcutsRaw = jsonDecode(input!);
+
+  runApp(App(
+    shortcuts: shortcutsRaw.map((json) => Shortcut.fromJson(json)).toList(),
+  ));
 }

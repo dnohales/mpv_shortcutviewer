@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../fixtures/shortcuts.dart';
 import '../models/shortcut.dart';
 import 'shortcut_list.dart';
 import 'shortcut_search_bar.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home({super.key, required this.shortcuts});
+
+  final List<Shortcut> shortcuts;
 
   @override
   State<Home> createState() => _HomeState();
@@ -22,7 +23,7 @@ class _HomeState extends State<Home> {
   }
 
   List<Shortcut> _getFilteredShortcuts() {
-    return shortcutsFixture
+    return widget.shortcuts
         .where((shortcut) => shortcut.match(_filter))
         .toList();
   }

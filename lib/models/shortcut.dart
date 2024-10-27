@@ -9,6 +9,14 @@ class Shortcut {
     required this.comment,
   });
 
+  factory Shortcut.fromJson(Map<String, dynamic> json) {
+    return Shortcut(
+      key: json['key'],
+      cmd: json['cmd'],
+      comment: json['comment'],
+    );
+  }
+
   bool match(String filter) {
     final filterRegex = RegExp(filter, caseSensitive: false);
     return filterRegex.hasMatch(key) ||

@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:window_manager/window_manager.dart';
 
+import '../models/shortcut.dart';
 import 'home.dart';
 
 class App extends StatefulWidget {
-  const App({super.key});
+  const App({super.key, required this.shortcuts});
+
+  final List<Shortcut> shortcuts;
 
   @override
   State<App> createState() => _AppState();
@@ -35,9 +38,11 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Home(),
+        body: Home(
+          shortcuts: widget.shortcuts,
+        ),
       ),
     );
   }
