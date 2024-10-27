@@ -1,16 +1,17 @@
-# mpv_shortcutviewer
+# MPV Shortcut Viewer
 
-A new Flutter project.
+An MPV extension to show all the configured keyboard and mouse shortcuts in
+an interactive Flutter based application.
 
-## Getting Started
+TODO: Screenshot
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+TODO
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Usage
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Just press `k` in MPV to show the shortcuts GUI, you can use the search bar
+to filter the shortcuts.
+
+Press `Esc` to quit the GUI.
